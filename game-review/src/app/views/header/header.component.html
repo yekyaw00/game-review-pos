@@ -1,0 +1,90 @@
+<nav class="navbar nav-justified navbar-expand-lg navbar-light bg-white">
+  <a class="navbar-brand" [routerLink]="['/home']"
+    ><img src="../../../assets/image/V-logo-png.png"
+  /></a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div
+    class="collapse navbar-collapse text-center justify-content-between w-100"
+    id="navbarSupportedContent"
+  >
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#"
+          >HOME <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">FAQ</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">ABOUT</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/graphic-card">PURCHASE</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/invoices">INVOICES</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav">
+      <div class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          class="nav-link mr-3"
+          ><i class="fa fa-plus"></i> NEW
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['/review/game-review-form']"
+            >Games</a
+          >
+          <a class="dropdown-item" [routerLink]="['/graphic-card-form']"
+            >Graphic Cards</a
+          >
+        </div>
+      </div>
+    </ul>
+
+    <div class="text-center">
+      <a class="nav-link text-info" routerLink="/cart"
+        ><i class="fa fa-shopping-cart fa-2x"></i
+        ><small class="badge badge-info badge-pill">
+          {{shoppingCart.cartSize}}
+        </small></a
+      >
+    </div>
+
+    <form class="form-inline my-2 my-lg-0">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <button class="btn btn-info my-2 my-sm-0" type="submit">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+        <input
+          class="form-control mr-sm-2 text-secondary"
+          type="search "
+          placeholder="Search "
+          aria-label="Search"
+        />
+      </div>
+    </form>
+  </div>
+</nav>

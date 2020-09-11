@@ -1,0 +1,25 @@
+
+thead tr th{
+    text-align: center;
+}
+
+tbody tr{
+    cursor: pointer;
+}
+
+tbody tr td{
+    text-align: center;
+}
+
+img{
+    height: 40rem;
+    width: 100%;
+}
+
+.carousel-control-next-icon {
+    background-color: gray;
+}
+
+.carousel-control-prev-icon{
+    background-color: gray;
+}

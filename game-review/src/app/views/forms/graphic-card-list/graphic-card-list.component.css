@@ -1,0 +1,12 @@
+img{
+    width: 300px;
+    height: 230px;
+}
+
+.card-img-top {
+    margin-left: 25px;
+}
+
+.card-footer{
+    background-color: gray;
+}

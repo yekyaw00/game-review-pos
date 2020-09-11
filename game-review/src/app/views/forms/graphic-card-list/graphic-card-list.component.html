@@ -1,0 +1,32 @@
+<div class="container mt-3">
+  <div class="row">
+    <div
+      class="col-md-4 mb-4"
+      *ngFor="let gc of graphicCards"
+      [routerLink]="['/graphic-card/detail', gc.id]"
+    >
+      <div class="card w-100 h-100">
+        <img [src]="gc.image[2]" class="card-img-top mt-2" />
+        <div class="card-body">
+          <h6 class="card-title">
+            <strong>{{ gc.title }}</strong>
+          </h6>
+        </div>
+        <div class="card-footer text-white">
+          <div class="card-text">
+            <div class="form-row">
+              <div class="col-md-6">
+                <p><strong>Product Brand </strong></p>
+                <p><strong>Price </strong></p>
+              </div>
+              <div class="col-md-6">
+              <p><strong>-  </strong>{{ gc.productBrand }}</p>
+              <p><strong>-  </strong>{{ gc.price }} $</p>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

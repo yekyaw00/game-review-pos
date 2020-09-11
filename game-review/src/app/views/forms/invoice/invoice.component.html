@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="invoice">
+    <h5 class="text-center">OShop</h5>
+    <hr />
+    <div class="form-row">
+      <div class="col-md-6">
+        <p><strong>Invoice ID : </strong> {{ invoice.id }}</p>
+      </div>
+      <div class="col-md-6 text-right">
+        <p>
+          <strong>Invoice Date : </strong>
+          {{ invoice.invoice_date | date: "short" }}
+        </p>
+      </div>
+    </div>
+    <table class="table table-bordered">
+      <thead class="thead-light text-nowrap">
+        <tr>
+          <th>Product Name</th>
+          <th>Unit Price</th>
+          <th>Quantity</th>
+          <th>Total Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of invoice.purchase">
+          <td>{{ p.graphicCard.title }}</td>
+          <td class="text-right">{{ p.graphicCard.price }}$</td>
+          <td class="text-right">{{ p.quantity }}</td>
+          <td class="text-right">{{ p.quantity * p.graphicCard.price }}$</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3" class="text-right">SubTotal</td>
+          <td class="text-right">{{ invoice.subtotal }} $</td>
+        </tr>
+        <tr>
+          <td colspan="3" class="text-right">Tax</td>
+          <td class="text-right">{{ invoice.tax }} $</td>
+        </tr>
+        <tr>
+          <td colspan="3" class="text-right">Total</td>
+          <td class="text-right">{{ invoice.total }} $</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>

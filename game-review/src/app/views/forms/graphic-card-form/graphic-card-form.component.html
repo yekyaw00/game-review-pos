@@ -1,0 +1,121 @@
+<div class="container py-3 px-0">
+  <h3 class="text-center text-danger">ADD NEW GRAPHIC CARD</h3>
+  <hr />
+  <div class="container w-75">
+    <form [formGroup]="graphicCardForm">
+      <div class="form-row mb-3 mt-4 justify-content-between">
+        <div class="col-md-5 mb-3">
+          <h6>Title</h6>
+          <input type="text" class="form-control" formControlName="title" />
+        </div>
+        <div class="col-md-3">
+          <h6>Released Year</h6>
+          <input type="text" class="form-control" formControlName="year" />
+        </div>
+        <div class="col-md-2 ">
+          <h6>Quarter</h6>
+          <select
+            class="custom-select form-control"
+            formControlName="quarter"
+          >
+            <option *ngFor="let q of quarter" [value]="q">{{ q }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row mt-2 justify-content-between">
+        <div class="col-md-2 mb-3">
+          <h6>Chipset Brand</h6>
+          <select class="custom-select" formControlName="chipsetBrand">
+            <option *ngFor="let cb of chipsetBrand" [value]="cb">
+              {{ cb | uppercase }}
+            </option>
+          </select>
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <h6>Product Brand</h6>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="productBrand"
+          />
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <h6>Memory Type</h6>
+          <input type="text" class="form-control" formControlName="ramType" />
+        </div>
+
+        <div class="col-md-2 mb-3">
+          <h6>Fan Type</h6>
+          <select class="custom-select" formControlName="fanType">
+            <option *ngFor="let ft of fanType" [value]="ft">{{ ft }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row mt-2 justify-content-start">
+
+        <div class="col-md-5 mb-3">
+          <h6>Image</h6>
+          <input
+          type="file"
+          multiple
+          class="form-control-file"
+          accept="image/*"
+          #image
+        />
+        </div>
+        
+        <div class="col-md-3 mb-3">
+          <h6>Price</h6>         
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">$</span>
+            </div>
+            <input type="text" class="form-control" formControlName="price" />
+          </div>
+        </div>
+      </div>
+
+      
+
+      <div class="form-row mt-2">
+        <div class="col-md-12 mb-3">
+          <h6>Total Ports</h6>
+          <textarea
+          class="form-control"
+          formControlName="totalPorts"
+        ></textarea>
+        </div>  
+      </div>
+
+      <div class="form-row mt-2">
+        <div class="col-md-12 mb-3">
+          <h6>About Item</h6>
+          <textarea
+          class="form-control"
+          formControlName="aboutItem"
+        ></textarea>
+        </div>  
+      </div>
+
+      <div class="form-row justify-content-end">
+        <button
+          class="col-md-2 text-center btn btn-outline-danger rounded-lg mt-4 mr-3"
+          (click)="save(image.files)"
+          type="button"
+        >
+          Save
+        </button>
+        <button
+          class="col-md-2 text-center btn btn-outline-danger rounded-lg mt-4"
+          (click)="cancel()"
+        >
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
