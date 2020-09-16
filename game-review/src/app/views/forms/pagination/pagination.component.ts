@@ -1,24 +1,22 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnChanges,
-  OnInit,
-  Output,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { GameReviewService } from '../../service/review.service';
 
 @Component({
   selector: 'app-pagination',
   templateUrl: './pagination.component.html',
   styleUrls: ['./pagination.component.css'],
 })
-export class PaginationComponent implements OnInit {
-  @Input() totalRecords: number = 0;
-  @Input() recordsPerPage: number = 0;
 
-  @Output() onPageChange: EventEmitter<number> = new EventEmitter();
+export class PaginationComponent implements OnInit {
+  currentPageNumber = 1;
+  itemsPerPage = 5;
+  review$: Observable<any[]>;
+
+  constructor(private gameReviewService: GameReviewService) { }
 
   ngOnInit() {
+    this.review$ = this.gameReviewService.findAll();
 }
 
  

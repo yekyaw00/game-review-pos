@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { JwPaginationComponent } from 'jw-angular-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,7 +8,6 @@ import { HomeComponent } from './views/forms/home/home.component';
 import { HeaderComponent } from './views/header/header.component';
 import { FooterComponent } from './views/footer/footer.component';
 import { ReviewFormComponent } from './views/forms/game-review-form/review-form.component';
-import { QuillModule } from 'ngx-quill';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PaginationComponent } from './views/forms/pagination/pagination.component';
 import { ReviewDetailComponent } from './views/forms/game-review-detail/review-detail.component';
@@ -36,7 +35,6 @@ import { InvoiceListComponent } from './views/forms/invoice-list/invoice-list.co
     PurchaseComponent,
     InvoiceComponent,
     InvoiceListComponent,
-    JwPaginationComponent
     
   ],
   imports: [
@@ -44,8 +42,8 @@ import { InvoiceListComponent } from './views/forms/invoice-list/invoice-list.co
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgxPaginationModule,
     AppRoutingModule,
-    
     
   ],
   providers: [],

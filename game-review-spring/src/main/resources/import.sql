@@ -1,0 +1,1 @@
+--insert into account(email, password, role, enable) values ('Admin','','ADMIN',true);

@@ -1,0 +1,9 @@
+.user-image, img{
+    width: 270px;
+    height: 230px;
+    object-fit: cover;
+  }
+  
+  .media-body{
+    font-size: 18px;
+  }
