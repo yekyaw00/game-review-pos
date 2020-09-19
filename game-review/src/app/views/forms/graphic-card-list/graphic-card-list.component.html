@@ -2,7 +2,7 @@
   <div class="row">
     <div
       class="col-md-4 mb-4"
-      *ngFor="let gc of graphicCards"
+      *ngFor="let gc of graphicCards | filter:'title':searchContent"
       [routerLink]="['/graphic-card/detail', gc.id]"
     >
       <div class="card w-100 h-100">

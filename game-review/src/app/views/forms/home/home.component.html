@@ -7,7 +7,11 @@
   <div class="row">
     <div
       class="card-group col-md-4 mb-3"
-      *ngFor="let gr of gameReview"
+      *ngFor="let gr of gameReview | filter:'title':searchContent | paginate:{
+        id: 'review',
+        itemsPerPage: itemsPerPage,
+        currentPage: currentPageNumber,
+        totalItems: gameReview.length}"
       [routerLink]="['/review/game-review-detail', gr.id]"
     >
       <div class="card">
@@ -39,8 +43,7 @@
       </div>
     </div>
   </div>
-  <div *ngFor="let item of pageOfItems">{{item.name}}</div>
+  <pagination-controls (pageChange)="currentPageNumber = $event" id="review"></pagination-controls>
   <div class="card-footer pb-0 pt-3">
-    <jw-pagination [items]="items" (changePage)="onChangePage($event)"></jw-pagination>
     
 </div>

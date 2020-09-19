@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GameReview } from '../../../dto/GameReview';
 import { GameReviewService } from '../../service/review.service';
+import { searchChange } from '../../../common/common-util';
 
 @Component({
   selector: 'app-home',
@@ -8,19 +9,17 @@ import { GameReviewService } from '../../service/review.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  items = [];
-  pageOfItems: Array<any>;
+  
+  currentPageNumber = 1;
+  itemsPerPage = 6;
   gameReview: GameReview[];
+  searchContent: string;
 
   constructor(private gameReviewService: GameReviewService) { }
 
   ngOnInit(): void {
     this.gameReviewService.findAll().subscribe(gameReview => this.gameReview = gameReview)
-    this.items = Array(150).fill(0).map((x, i) => ({ id: (i + 1), name: `Item ${i + 1}`}));
+    searchChange.subscribe(data => this.searchContent=data)
   }
 
-  onChangePage(pageOfItems: Array<any>) {
-    // update current page of items
-    this.pageOfItems = pageOfItems;
-} 
 }

@@ -13,11 +13,15 @@ import { PaginationComponent } from './views/forms/pagination/pagination.compone
 import { ReviewDetailComponent } from './views/forms/game-review-detail/review-detail.component';
 import { GraphicCardFormComponent } from './views/forms/graphic-card-form/graphic-card-form.component';
 import { GraphicCardListComponent } from './views/forms/graphic-card-list/graphic-card-list.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { GraphicCardDetailComponent } from './views/forms/graphic-card-detail/graphic-card-detail.component';
 import { PurchaseComponent } from './views/forms/cart/cart.component';
 import { InvoiceComponent } from './views/forms/invoice/invoice.component';
 import { InvoiceListComponent } from './views/forms/invoice-list/invoice-list.component';
+import { SignupComponent } from './views/forms/signup/signup.component';
+import { SigninComponent } from './views/forms/signin/signin.component';
+import { CommonPipe } from './common/common.pipe';
+import { AuthInterceptor } from './views/service/auth-interceptor.service';
 
 
 @NgModule({
@@ -35,6 +39,9 @@ import { InvoiceListComponent } from './views/forms/invoice-list/invoice-list.co
     PurchaseComponent,
     InvoiceComponent,
     InvoiceListComponent,
+    SignupComponent,
+    SigninComponent,
+    CommonPipe
     
   ],
   imports: [
@@ -46,7 +53,9 @@ import { InvoiceListComponent } from './views/forms/invoice-list/invoice-list.co
     AppRoutingModule,
     
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

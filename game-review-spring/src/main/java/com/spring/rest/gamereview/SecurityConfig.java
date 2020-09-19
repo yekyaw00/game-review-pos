@@ -16,6 +16,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.spring.rest.gamereview.security.JWTAuthenticationFilter;
 import com.spring.rest.gamereview.security.JWTAuthorizationFilter;
+import com.sun.xml.bind.v2.runtime.output.Encoded;
 
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -41,7 +42,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.cors().and().csrf().disable()
 			.authorizeRequests()
 			.antMatchers("/v2/api-docs", "/configuration/**", "/swagger*/**", "/webjars/**").permitAll()
-			.antMatchers(HttpMethod.GET, "/review/**", "/graphic-card/**" ,"cart").permitAll()
+			.antMatchers(HttpMethod.GET, "/game-review/**", "/graphic-card/**").permitAll()
+			.antMatchers(HttpMethod.POST, "/account", "/image-upload").permitAll()
 			.anyRequest().authenticated()
 			.and()
 			.addFilter(new JWTAuthenticationFilter(authenticationManager(),env))
@@ -53,4 +55,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
-}
+	
+	}

@@ -1,1 +1,1 @@
---insert into account(email, password, role, enable) values ('Admin','','ADMIN',true);
+insert into account(email, password, role, enable) values ('Admin','$2a$10$77FusgJlJ33KqIKBAXT48ee5JqmtjAmjU/goyoz1ylZQLothx/XUu','ADMIN',true);
