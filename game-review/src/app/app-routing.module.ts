@@ -12,6 +12,8 @@ import { InvoiceListComponent } from './views/forms/invoice-list/invoice-list.co
 import { SignupComponent } from './views/forms/signup/signup.component';
 import { SigninComponent } from './views/forms/signin/signin.component';
 import { AuthGuard } from './views/service/auth-guard.service';
+import { AboutComponent } from './views/forms/about/about.component';
+import { FaqComponent } from './views/forms/faq/faq.component';
 
 
 const routes: Routes = [
@@ -27,6 +29,8 @@ const routes: Routes = [
   { path: 'invoices', component:InvoiceListComponent},
   { path: 'sign-up', component:SignupComponent},
   { path: 'sign-in', component:SigninComponent},
+  { path: 'about', component: AboutComponent},
+  { path: 'faq', component: FaqComponent},
   { path: '**', redirectTo: '/home', pathMatch: 'full' }
   
 ];

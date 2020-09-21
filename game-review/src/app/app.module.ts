@@ -9,7 +9,6 @@ import { HeaderComponent } from './views/header/header.component';
 import { FooterComponent } from './views/footer/footer.component';
 import { ReviewFormComponent } from './views/forms/game-review-form/review-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { PaginationComponent } from './views/forms/pagination/pagination.component';
 import { ReviewDetailComponent } from './views/forms/game-review-detail/review-detail.component';
 import { GraphicCardFormComponent } from './views/forms/graphic-card-form/graphic-card-form.component';
 import { GraphicCardListComponent } from './views/forms/graphic-card-list/graphic-card-list.component';
@@ -22,6 +21,8 @@ import { SignupComponent } from './views/forms/signup/signup.component';
 import { SigninComponent } from './views/forms/signin/signin.component';
 import { CommonPipe } from './common/common.pipe';
 import { AuthInterceptor } from './views/service/auth-interceptor.service';
+import { AboutComponent } from './views/forms/about/about.component';
+import { FaqComponent } from './views/forms/faq/faq.component';
 
 
 @NgModule({
@@ -31,7 +32,6 @@ import { AuthInterceptor } from './views/service/auth-interceptor.service';
     HeaderComponent,
     FooterComponent,
     ReviewFormComponent,
-    PaginationComponent,
     ReviewDetailComponent,
     GraphicCardFormComponent,
     GraphicCardListComponent,
@@ -41,7 +41,9 @@ import { AuthInterceptor } from './views/service/auth-interceptor.service';
     InvoiceListComponent,
     SignupComponent,
     SigninComponent,
-    CommonPipe
+    CommonPipe,
+    AboutComponent,
+    FaqComponent
     
   ],
   imports: [

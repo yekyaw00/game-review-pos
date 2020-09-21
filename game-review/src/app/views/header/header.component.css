@@ -3,8 +3,17 @@ img{
     height: 50px;
 }
 
-.nav-item .nav-link{
-    color: #17A2B8;
+.nav-item, .nav-link {
+    color: #f1ec0e;
     width: 100%;
-    
+    text-shadow: 1px 1px 2px #f1ec0e;
+}
+
+.fa-shopping-cart, .badge{
+    color: #f1ec0e;
+}
+
+.btn {
+    background-color: #f1ec0e;
+   
 }

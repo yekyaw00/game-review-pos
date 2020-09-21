@@ -1,39 +1,47 @@
 <div class="container">
   <div class="form-row justify-content-center">
-    <div class="border border-danger rounded-pill m-4 p-2 bg-danger">
-     <span class="text-white font-weight-bolder">RECENT GAME REVIEWS</span>
+    <div class="border border-dark rounded-pill m-4 p-2 ">
+      <span class="text font-weight-bolder">RECENT GAME REVIEWS</span>
     </div>
   </div>
   <div class="row">
     <div
       class="card-group col-md-4 mb-3"
-      *ngFor="let gr of gameReview | filter:'title':searchContent | paginate:{
-        id: 'review',
-        itemsPerPage: itemsPerPage,
-        currentPage: currentPageNumber,
-        totalItems: gameReview.length}"
+      *ngFor="
+        let gr of gameReview
+          | filter: 'title':searchContent
+          | paginate
+            : {
+                id: 'review',
+                itemsPerPage: itemsPerPage,
+                currentPage: currentPageNumber,
+                totalItems: gameReview.length
+              }
+      "
       [routerLink]="['/review/game-review-detail', gr.id]"
     >
       <div class="card">
-        <img [src]="gr.cardPhoto[1]" class="card-img-top" />
+        <img [src]="gr.cardPhoto[0]" class="card-img-top" />
         <div class="card-body">
-          <h5 class="card-title text-center font-weight-bolder">{{ gr.title }}</h5>
-          <hr>
+          <h5 class="card-title text-center font-weight-bolder">
+            {{ gr.title }}
+          </h5>
+          <hr />
           <div class="card-body text-center">
             <div class="table-responsive-md">
               <table class="table table-borderless table-sm">
                 <tbody>
                   <tr>
                     <th scope="row" class="w-50">Mode</th>
-                    <td>{{gr.mode}}</td>
+                    <td>{{ gr.mode }}</td>
                   </tr>
                   <tr>
                     <th scope="row" class="w-50">Platform</th>
-                    <td>{{gr.platform}}</td>
+                    <td>{{ gr.platform }}</td>
                   </tr>
                   <tr>
                     <th scope="row" class="w-50">Released Date</th>
-                    <td>{{gr.releasedDate | date:'yyyy-mm-dd'}}</td>
+                    <td>{{ gr.releasedDate | date: "yyyy-mm-dd" }}</td>
                   </tr>
                 </tbody>
               </table>
@@ -43,7 +51,10 @@
       </div>
     </div>
   </div>
-  <pagination-controls (pageChange)="currentPageNumber = $event" id="review"></pagination-controls>
-  <div class="card-footer pb-0 pt-3">
-    
+  <div class="row justify-content-center">
+    <pagination-controls
+      (pageChange)="currentPageNumber = $event"
+      id="review"
+    ></pagination-controls>
+  </div>
 </div>

@@ -8,7 +8,7 @@ img{
 }
 
 h4{
-    color: tomato;
+    color: #F1EC0E;
 }
 
 td{
@@ -17,4 +17,8 @@ td{
 
 .qtybox{
     width: 60px;
+}
+
+.border{
+    background-color:#201f02;
 }

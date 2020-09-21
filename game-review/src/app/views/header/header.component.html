@@ -1,4 +1,4 @@
-<nav class="navbar nav-justified navbar-expand-lg navbar-light bg-white">
+<nav class="navbar nav-justified navbar-expand-lg bg-dark">
   <a class="navbar-brand" [routerLink]="['/home']"
     ><img src="../../../assets/image/V-logo-png.png"
   /></a>
@@ -20,15 +20,15 @@
   >
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#"
+        <a class="nav-link" routerLink='/home'
           >HOME <span class="sr-only">(current)</span></a
         >
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">FAQ</a>
+        <a class="nav-link" routerLink='/faq'>FAQ</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">ABOUT</a>
+        <a class="nav-link" routerLink='/about'>ABOUT</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/graphic-card">PURCHASE</a>
@@ -45,6 +45,7 @@
         <input
           class="form-control text-secondary"
           type="search "
+          
           placeholder="Search "
           aria-label="Search"
           (keyup.enter)="search($event.target.value)"
@@ -77,13 +78,13 @@
     </ul>
 
     <div *ngIf="!authService.isLogin">
-      <button type="button" class="btn btn-info btn-sm" routerLink="sign-in">
+      <button type="button" class="btn btn-sm " routerLink="sign-in">
         Login <i class="fa fa-sign-in"></i>
       </button>
 
       <button
         type="button"
-        class="btn btn-info btn-sm mx-2"
+        class="btn btn-sm mx-2"
         routerLink="sign-up"
       >
         SignUp <i class="fa fa-user-plus"></i>
@@ -92,7 +93,7 @@
 
     <button
       type="button"
-      class="btn btn-info btn-sm"
+      class="btn btn-sm ml-2"
       (click)="logout()"
       *ngIf="authService.isLogin"
     >
@@ -100,9 +101,9 @@
     </button>
 
     <div class="text-center">
-      <a class="nav-link text-info" routerLink="/cart"
+      <a class="nav-link text-light" routerLink="/cart"
         ><i class="fa fa-shopping-cart fa-2x"></i
-        ><small class="badge badge-info badge-pill">
+        ><small class="badge badge-pill">
           {{ shoppingCart.cartSize }}
         </small></a
       >

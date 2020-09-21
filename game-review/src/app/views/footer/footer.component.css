@@ -1,5 +1,14 @@
 .border{
-    background-color: tomato;
+    background-color: #f1ec0e;
     height: 50px;
     padding-top: 15px;
+}
+
+p, a{
+    color: #f1ec0e;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
 }

@@ -1,3 +1,11 @@
 .aboutGame{
     height: 200px;
 }
+
+.text{
+    color:  #f1ec0e;
+}
+
+.border{
+    background-color: black;
+}
