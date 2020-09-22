@@ -1,8 +1,8 @@
 <div class="container py-3 px-0">
   <div class="row justify-content-center">
-    <div class="border border-dark rounded-pill">
+    <div class="border border-dark rounded-lg">
       <div class="text-center text m-2">
-        <h3>NEW GAME REVIEW</h3>
+        <h4>NEW GAME REVIEW</h4>
       </div>
     </div>
   </div>
@@ -12,21 +12,21 @@
       <div class="form-row mb-3 mt-4 justify-content-start">
         <div class="col-md-5 mb-3">
           <h6>Title</h6>
-          <input type="text" class="form-control" formControlName="title" />
+          <input type="text" class="form-control" formControlName="title" required/>
         </div>
         <div class="col-md-3 ml-4 mb-3">
           <h6>Released Date</h6>
           <input
             type="date"
             class="form-control"
-            formControlName="releasedDate"
+            formControlName="releasedDate" required
           />
         </div>
         <div class="col-md-3 ml-4 mb-3">
           <h6>Mode</h6>
           <select class="custom-select" formControlName="mode">
             <option *ngFor="let m of mode" [value]="m">
-              {{ m | uppercase }}
+              {{ m | uppercase }} required
             </option>
           </select>
         </div>
@@ -35,7 +35,7 @@
       <div class="form-row mt-2 justify-content-start">
         <div class="col-md-4 mb-3">
           <h6>Platform</h6>
-          <input type="text" class="form-control" formControlName="platform" />
+          <input type="text" class="form-control" formControlName="platform" required/>
         </div>
 
         <div class="col-md-3 ml-4 mb-3">
@@ -43,7 +43,7 @@
           <input
             type="text"
             class="form-control"
-            formControlName="gameEngine"
+            formControlName="gameEngine" required
           />
         </div>
 
@@ -52,7 +52,7 @@
           <input
             type="text"
             class="form-control"
-            formControlName="publishedCompany"
+            formControlName="publishedCompany" required
           />
         </div>
       </div>
@@ -66,12 +66,12 @@
             class="form-control-file"
             multiple
             accept="image/*"
-            #image
+            #image required
           />
         </div>
         <div class="col-md-7 ml-4 mb-3">
           <h6>Genre</h6>
-          <input type="text" class="form-control" formControlName="genre" />
+          <input type="text" class="form-control" formControlName="genre" required/>
         </div>
       </div>
 
@@ -80,7 +80,7 @@
           <h6>About Game</h6>
           <textarea
             class="form-control aboutGame"
-            formControlName="aboutGame"
+            formControlName="aboutGame" required
           ></textarea>
         </div>
       </div>
@@ -90,7 +90,7 @@
           <h6>Minimum Requirement</h6>
           <textarea
             class="form-control"
-            formControlName="minimumRequirement"
+            formControlName="minimumRequirement" required
           ></textarea>
         </div>
       </div>
@@ -100,21 +100,21 @@
           <h6>Recommended Requirement</h6>
           <textarea
             class="form-control"
-            formControlName="maximumRequirement"
+            formControlName="maximumRequirement" required
           ></textarea>
         </div>
       </div>
 
       <div class="form-row justify-content-end">
         <button
-          class="col-md-2 text-center btn btn-outline-danger rounded-lg mt-4 mr-3"
+          class="col-md-2 text-center  btn btn-outline-dark rounded-lg mt-4 mr-3"
           (click)="save(image.files)"
           type="button"
         >
           Save
         </button>
         <button
-          class="col-md-2 text-center btn btn-outline-danger rounded-lg mt-4"
+          class="col-md-2 text-center btn btn-outline-dark rounded-lg mt-4"
           (click)="cancel()"
         >
           Cancel

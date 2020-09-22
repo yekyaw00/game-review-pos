@@ -6,6 +6,10 @@
     color:  #f1ec0e;
 }
 
-.border{
-    background-color: black;
+.border-dark{
+    background-color: #0a494d;
+}
+
+.btn{
+    background-color:  #cdd728;
 }

@@ -4,6 +4,7 @@ import { ShoppingCart } from '../../../dto/ShoppingCart';
 import { InvoiceService } from '../../service/invoice.service';
 import { Router } from '@angular/router';
 import { Invoice } from 'src/app/dto/Invoice';
+import { AuthService } from '../../service/auth.service';
 
 @Component({
   selector: 'app-purchase',
@@ -16,7 +17,7 @@ export class PurchaseComponent implements OnInit {
   purchase: Purchase[];
 
   constructor(public shoppingCart: ShoppingCart, private invoiceService: InvoiceService,
-    private router: Router) { }
+    private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.purchase = this.shoppingCart.purchase

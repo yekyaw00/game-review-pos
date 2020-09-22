@@ -1,9 +1,9 @@
 <div class="container py-3 px-0">
   <div class="row justify-content-center">
-    <div class="col-md-4 border border-light">
-      <div class="text-center create border border-dark rounded-pill">
+    <div class="col-md-5 border border-light">
+      <div class="text-center create border border-dark rounded-lg">
         <div class="m3">
-          <h3>{{ account ? "Update" : "Create New" }} Account</h3>
+          <h4>{{ account ? "Update" : "Create New" }} Account</h4>
         </div>
       </div>
       <hr />
@@ -77,7 +77,7 @@
         <div class="form-row justify-content-center">
           <button
             type="submit"
-            class="text-center btn btn-outline-danger rounded-lg mb-3 mt-2"
+            class="text-center btn btn-outline-dark rounded-lg  mb-3 mt-2"
             [disabled]="!signUpForm.valid">
             Submit
           </button>

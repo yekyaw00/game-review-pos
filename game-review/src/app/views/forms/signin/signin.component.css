@@ -3,5 +3,9 @@
 }
 
 .border-dark{
-    background-color: black;
+    background-color: #0a494d;
+}
+
+.btn{
+    background-color:  #f1ec0e;
 }

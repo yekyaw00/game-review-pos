@@ -7,8 +7,12 @@ img{
     width: 100%;
 }
 
-h4{
-    color: #F1EC0E;
+.cart{
+    color: #f1ec0e;
+}
+
+.border{
+    background-color: #0a494d;
 }
 
 td{
@@ -19,6 +23,10 @@ td{
     width: 60px;
 }
 
-.border{
-    background-color:#201f02;
+.btn{
+    background-color:  #cdd728;
+}
+
+.checkout{
+ 
 }

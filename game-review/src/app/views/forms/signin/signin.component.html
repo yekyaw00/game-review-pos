@@ -16,9 +16,9 @@
       </button>
     </div>
     <div class="w-100"></div>
-    <div class="col-md-4 border border-light">
-      <div class="border border-dark rounded-pill">
-        <h3 class="text-center login">Login to your account!</h3>
+    <div class="col-md-5 border border-light">
+      <div class="border border-dark rounded-lg">
+        <h4 class="text-center login">Login to your account!</h4>
       </div>
       <hr />
       <form (ngSubmit)="signIn(signInForm)" #signInForm="ngForm">
@@ -51,7 +51,7 @@
                 password
                 name="password"
                 required
-                #password="ngModel"
+                #password="ngModel" required
               />
             </div>
             <span *ngIf="password.errors?.password" class="text-danger"
@@ -65,13 +65,15 @@
           </div>
         </div>
         <div class="form-row justify-content-center">
+          <div class="col-md-3">
           <button
             type="submit"
-            class="text-center btn btn-outline-danger rounded-lg mb-3 mt-2"
+            class="text-center btn btn-outline-dark rounded-lg mb-3 mt-2"
             [disabled]="!signInForm.valid"
           >
-            SignIn
+            Log in
           </button>
+        </div>
         </div>
       </form>
     </div>

@@ -1,14 +1,22 @@
 .border{
-    background-color: #f1ec0e;
+    background-color:#0a494d;
     height: 50px;
     padding-top: 15px;
 }
 
-p, a{
-    color: #f1ec0e;
+p, a {
+    color: #0a494d;
 }
 
 footer{
     position: fixed;
     bottom: 0;
+}
+
+.font-weight-bold {
+    color:  #f1ec0e;
+}
+
+.text-muted{
+    font-size: 13px;
 }

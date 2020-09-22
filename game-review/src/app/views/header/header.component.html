@@ -1,4 +1,4 @@
-<nav class="navbar nav-justified navbar-expand-lg bg-dark">
+<nav class="navbar nav-justified navbar-expand-lg nav-bg">
   <a class="navbar-brand" [routerLink]="['/home']"
     ><img src="../../../assets/image/V-logo-png.png"
   /></a>
@@ -78,13 +78,13 @@
     </ul>
 
     <div *ngIf="!authService.isLogin">
-      <button type="button" class="btn btn-sm " routerLink="sign-in">
+      <button type="button" class="btn btn-sm btn-outline-dark" routerLink="sign-in">
         Login <i class="fa fa-sign-in"></i>
       </button>
 
       <button
         type="button"
-        class="btn btn-sm mx-2"
+        class="btn btn-outline-dark btn-sm mx-2"
         routerLink="sign-up"
       >
         SignUp <i class="fa fa-user-plus"></i>
@@ -93,7 +93,7 @@
 
     <button
       type="button"
-      class="btn btn-sm ml-2"
+      class="btn btn-outline-dark btn-sm ml-2"
       (click)="logout()"
       *ngIf="authService.isLogin"
     >
@@ -101,7 +101,7 @@
     </button>
 
     <div class="text-center">
-      <a class="nav-link text-light" routerLink="/cart"
+      <a class="nav-link" routerLink="/cart"
         ><i class="fa fa-shopping-cart fa-2x"></i
         ><small class="badge badge-pill">
           {{ shoppingCart.cartSize }}

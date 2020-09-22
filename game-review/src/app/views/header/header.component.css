@@ -6,14 +6,18 @@ img{
 .nav-item, .nav-link {
     color: #f1ec0e;
     width: 100%;
-    text-shadow: 1px 1px 2px #f1ec0e;
+    font-weight: bold;
 }
 
 .fa-shopping-cart, .badge{
     color: #f1ec0e;
 }
 
-.btn {
+.btn, .navbar-toggler-icon {
     background-color: #f1ec0e;
-   
+}
+
+
+.nav-bg{
+    background-color: #0a494d;
 }

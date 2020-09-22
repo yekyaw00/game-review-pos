@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container mt-3">
   <div class="form-row">
-    <div class="col-md-6 mb-3">
+    <div class="col-md-6">
       <div
         id="carouselExampleIndicators"
         class="carousel slide border pt-2 pb-2"
@@ -43,7 +43,7 @@
         </a>
       </div>
     </div>
-    <div class="col-md-5 m-3">
+    <div class="col-md-5 ml-3">
       <div class="text-left">
         <h4>{{ graphicCards.title }}</h4>
       </div>
@@ -52,31 +52,31 @@
       <table class="table table-borderless table-sm">
         <tbody>
           <tr>
-            <th scope="row" class="w-50">Released Date</th>
+            <th scope="row" class="w-25">Released Date</th>
             <td>{{graphicCards.year}}, {{graphicCards.quarter}}</td>
           </tr>
           <tr>
-            <th scope="row" class="w-50">Brand</th>
+            <th scope="row" class="w-25">Brand</th>
             <td>{{graphicCards.chipsetBrand}} / {{graphicCards.productBrand}}</td>
           </tr>
           <tr>
-            <th scope="row" class="w-50">Memory</th>
+            <th scope="row" class="w-25">Memory</th>
             <td>{{graphicCards.ramType}}</td>
           </tr>
           <tr>
-            <th scope="row" class="w-50">Output</th>
+            <th scope="row" class="w-25">Output</th>
             <td>{{graphicCards.totalPorts}}</td>
           </tr>
           <tr>
-            <th scope="row" class="w-50">About Item</th>
+            <th scope="row" class="w-25">About Item</th>
             <td>{{graphicCards.aboutItem}}</td>
           </tr>
           <tr>
-            <th scope="row" class="w-50">Price</th>
+            <th scope="row" class="w-25">Price</th>
             <td>{{graphicCards.price}}$</td>
           </tr>
         </tbody>
       </table>
-      <button class="btn btn-outline-danger mt-3" (click)="addToCart(graphicCards)">Add to Cart <i class="fa fa-cart-plus"></i></button>
+      <button class="btn btn-outline-dark rounded-lg mt-3" (click)="addToCart(graphicCards)">Add to Cart <i class="fa fa-cart-plus"></i></button>
     </div>
 </div>

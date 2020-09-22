@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'graphic-card/detail/:id', component: GraphicCardDetailComponent},
   { path: 'cart', component: PurchaseComponent},
   { path: 'invoices/:id', component: InvoiceComponent},
-  { path: 'invoices', component:InvoiceListComponent},
+  { path: 'invoices', component:InvoiceListComponent, canActivate:[AuthGuard]},
   { path: 'sign-up', component:SignupComponent},
   { path: 'sign-in', component:SigninComponent},
   { path: 'about', component: AboutComponent},
